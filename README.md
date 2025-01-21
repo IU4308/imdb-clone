@@ -1,9 +1,5 @@
-# React + Vite
+# IMDb Clone Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## IMDb clone project built with React, React Router Dom, Axios and [json-server as a backend](https://github.com/IU4308/imdb-clone-backend). Deployed on Vercel
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-# imdb-clone
+[See Website](https://imdb-clone-sigma-gilt.vercel.app/)
