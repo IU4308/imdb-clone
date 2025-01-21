@@ -2,6 +2,7 @@ import { createContext, useEffect, useState } from "react";
 import useWindowSize from "../hooks/useWindowSize";
 import api from '../api/watchlist'
 import useWatchlistFetch from "../hooks/useWatchlistFetch";
+import useMetaFetch from "../hooks/useMetaFetch";
 
 const baseUrl = "https://imdb-clone-backend-lemon.vercel.app"
 
@@ -13,6 +14,7 @@ export const DataProvider = ({ children }) => {
 
     const { width } = useWindowSize();
     const { data, fetchWatchlistError, isWatchlistLoading } = useWatchlistFetch(`${baseUrl}/watchlist`)
+    const { meta } = useMetaFetch(`${baseUrl}/meta`)
 
     useEffect(() => {
         setSelectedMovies(data)
@@ -57,6 +59,7 @@ export const DataProvider = ({ children }) => {
             isWatchlistLoading,
             fetchWatchlistError,
             width,
+            meta
         }}>
             <DataContextHandlers.Provider value={{
                 handleAddToWatchlist,

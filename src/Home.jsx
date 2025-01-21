@@ -1,22 +1,23 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import MovieCard from './MovieCard'
 import Info from './Info'
 import { RemoveScroll } from 'react-remove-scroll';
 import useMoviesFetch from './hooks/useMoviesFetch';
 import Pagination from './Pagination';
-import { metaFetch } from './metaFetch';
 import { useParams } from 'react-router-dom';
+import { DataContext } from './context/DataContext';
 
 const baseUrl = "https://imdb-clone-backend-lemon.vercel.app"
-
-const lastpage = metaFetch(`${baseUrl}/meta`)
-// const lastpage = 2
 
 const Home = () => {
     const { pageId } = useParams()
     const [clickedId, setClickedId] = useState(null)
     const [isInfoOpen, setIsInfoOpen] = useState(false);
     const [movies, setMovies] = useState([])
+
+    const { meta } = useContext(DataContext)
+
+    const lastpage = meta.lastpage
 
     const { data, fetchError, isLoading } = useMoviesFetch(`${baseUrl}/movies?page=${pageId}`)
 

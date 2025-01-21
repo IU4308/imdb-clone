@@ -6,8 +6,11 @@ export const metaFetch = (url) => {
         })
         .then(data => {
             localStorage.setItem("lastpage", data.lastpage)
+            const lastpage = localStorage.getItem("lastpage")
+            // console.log(lastpage)
+            return lastpage
         })
 
-    return Number(localStorage.getItem("lastpage"))
+    // return lastpage
 
 }
