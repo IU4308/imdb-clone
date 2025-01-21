@@ -9,7 +9,7 @@ import { useParams } from 'react-router-dom';
 
 const baseUrl = "https://imdb-clone-backend-lemon.vercel.app"
 
-const lastpage = metaFetch("http://localhost:3000/meta")
+const lastpage = metaFetch(`${baseUrl}/meta`)
 
 const Home = () => {
     const { pageId } = useParams()
